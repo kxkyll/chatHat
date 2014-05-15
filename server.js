@@ -14,7 +14,7 @@ function sendFile(response, filePath, fileContents) {
     200, 
     {"content-type": mime.lookup(path.basename(filePath))}
     );
-  responce.end(fileContents);
+  response.end(fileContents);
 }
 function serveStatic(response, cache, absPath) {
   if (cache[absPath]) {
