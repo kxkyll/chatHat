@@ -7,7 +7,7 @@ var cache = {};
 function send404(response) {
   response.writeHead(404, {'Content-Type': 'text/plain'});
   response.write('Error 404: resource not found.');
-  responce.end();
+  response.end();
 }
 function sendFile(response, filePath, fileContents) {
   response.writeHead (
@@ -16,7 +16,7 @@ function sendFile(response, filePath, fileContents) {
     );
   responce.end(fileContents);
 }
-function serveStatic(responce, cache, absPath) {
+function serveStatic(response, cache, absPath) {
   if (cache[absPath]) {
     sendFile(response, absPath, cache[absPath]);
   } else {
